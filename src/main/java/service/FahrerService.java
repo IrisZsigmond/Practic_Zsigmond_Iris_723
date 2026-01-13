@@ -1,6 +1,7 @@
 package service;
 
 import model.Fahrer;
+import model.FahrerStatus;
 import repo.AbstractRepoImpl;
 import repo.AbstractRepository;
 
@@ -48,5 +49,28 @@ public class FahrerService {
                 .toList();
     }
 
-
+    /**
+     * Filtern nach Team und Status
+     * Lesen Sie von der Tastatur einen Teamnamen (String) ein.
+     * Geben Sie anschließend nur die Fahrer aus, die gleichzeitig folgende Bedingungen erfüllen:
+     * ● team == eingegebener Teamname
+     * ● status == ACTIVE
+     * Die Ausgabe erfolgt im gleichen Format wie in Aufgabe 1.
+     * Ausgabe:
+     * Input team: Red Bull
+     * [1] Max Verstappen (Red Bull) - ACTIVE, skill=10
+     * [2] Sergio Perez (Red Bull) - ACTIVE, skill=8
+     */
+    public List<String> filterActiveFahrersByTeam(String team) {
+        List<Fahrer> fahrers = fahrerRepo.findAll();
+        return fahrers.stream()
+                .filter(f -> f.getTeam().equalsIgnoreCase(team) && f.getStatus() == FahrerStatus.ACTIVE)
+                .map(fahrer -> String.format("[%d] %s (%s) - %s, skill=%d",
+                        fahrer.getId(),
+                        fahrer.getName(),
+                        fahrer.getTeam(),
+                        fahrer.getStatus(),
+                        fahrer.getSkillLevel()))
+                .toList();
+    }
 }

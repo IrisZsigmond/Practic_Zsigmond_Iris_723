@@ -64,9 +64,9 @@ public class ConsoleController {
         // 1
         menu.put(1, new MenuItem("Load & print counts + all drivers", this::option1));
 
-//        // 2
-//        menu.put(2, new MenuItem("Filter alive tributes by district", this::option2));
-//
+        // 2
+        menu.put(2, new MenuItem("Filter active drivers by team", this::option2));
+
 //        // 3
 //        menu.put(3, new MenuItem("Sort tributes: skill desc, name asc", this::option3));
 //
@@ -85,7 +85,7 @@ public class ConsoleController {
 
     private void printMenu() {
         System.out.println();
-        System.out.println("============== HUNGER GAMES CONSOLE ==============");
+        System.out.println("============== FORMULA 1 CONSOLE ==============");
         menu.forEach((k, v) -> System.out.printf("%d. %s%n", k, v.label));
         System.out.println("0. Exit");
         System.out.println("==================================================");
@@ -107,15 +107,15 @@ public class ConsoleController {
         fahrerService.printAllFahrers().forEach(System.out::println);
     }
 
-//    /**
-//     * 2) Filter alive tributes by district (read D)
-//     */
-//    private void option2() {
-//        int district = readInt("Input district: ");
-//        StrafeService.filteraliveTributesByDistrict(district)
-//                .forEach(System.out::println);
-//    }
-//
+    /**
+     * 2) Filter active drivers by team (read team)
+     */
+    private void option2() {
+        String team = readNonEmpty("Input name: ");
+        fahrerService.filterActiveFahrersByTeam(team)
+                .forEach(System.out::println);
+    }
+
 //    /**
 //     * 3) Sort tributes by skill desc then name asc
 //     */
@@ -166,6 +166,16 @@ public class ConsoleController {
             } catch (NumberFormatException e) {
                 System.out.println("Please enter a valid integer.");
             }
+        }
+    }
+
+
+    private String readNonEmpty(String prompt) {
+        while (true) {
+            System.out.print(prompt);
+            String s = scanner.nextLine();
+            if (s != null && !s.trim().isEmpty()) return s.trim();
+            System.out.println("Value must not be empty.");
         }
     }
 
