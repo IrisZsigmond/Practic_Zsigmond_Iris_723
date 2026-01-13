@@ -1,0 +1,15 @@
+[1] Max Verstappen (Red Bull) - ACTIVE, skill=10
+[5] Charles Leclerc (Ferrari) - ACTIVE, skill=9
+[3] Lewis Hamilton (Mercedes) - ACTIVE, skill=9
+[6] Carlos Sainz (Ferrari) - ACTIVE, skill=8
+[9] Fernando Alonso (Aston Martin) - ACTIVE, skill=8
+[4] George Russell (Mercedes) - ACTIVE, skill=8
+[7] Lando Norris (McLaren) - ACTIVE, skill=8
+[2] Sergio Perez (Red Bull) - ACTIVE, skill=8
+[14] Alex Albon (Williams) - ACTIVE, skill=7
+[12] Esteban Ocon (Alpine) - DNF, skill=7
+[8] Oscar Piastri (McLaren) - ACTIVE, skill=7
+[11] Pierre Gasly (Alpine) - ACTIVE, skill=7
+[13] Yuki Tsunoda (RB) - ACTIVE, skill=7
+[10] Lance Stroll (Aston Martin) - DNF, skill=6
+[15] Valtteri Bottas (Sauber) - ACTIVE, skill=6
