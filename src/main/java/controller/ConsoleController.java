@@ -72,15 +72,15 @@ public class ConsoleController {
 
         // 4
         menu.put(4, new MenuItem("Write sorted drivers to data/drivers_sorted.txt", this::option4));
-//
-//        // 5
-//        menu.put(5, new MenuItem("Compute points for first 5 events", this::option5));
-//
+
+        // 5
+        menu.put(5, new MenuItem("Compute points for first 5 events", this::option5));
+
 //        // 6
 //        menu.put(6, new MenuItem("Ranking Top 5 tributes by total score", this::option6));
-//
-//        // 7
-//        menu.put(7, new MenuItem("Generate arena_report.txt", this::option7));
+
+        // 7
+        menu.put(7, new MenuItem("Generate data/race_report.txt", this::option7));
     }
 
     private void printMenu() {
@@ -131,14 +131,14 @@ public class ConsoleController {
         fahrerService.saveSortedFahrersToFile();
         System.out.println("Saved to data/drivers_sorted.txt");
     }
-//
-//    /**
-//     * 5) Compute points for first 5 events and print each line
-//     */
-//    private void option5() {
-//        ereignisService.calculateAndPrintEventPoints()
-//                .forEach(System.out::println);
-//    }
+
+    /**
+     * 5) Compute points for first 5 events and print each line
+     */
+    private void option5() {
+        ereignisService.calculateAndPrintEventPoints()
+                .forEach(System.out::println);
+    }
 //
 //    /**
 //     * 6) Ranking Top 5
@@ -150,10 +150,10 @@ public class ConsoleController {
 //    /**
 //     * 7) Arena report file
 //     */
-//    private void option7() {
-//        ereignisService.generateArenaReport();
-//        System.out.println("Generated arena_report.txt");
-//    }
+    private void option7() {
+        ereignisService.generateRaceReport();
+        System.out.println("Generated data/race_report.txt");
+    }
 
     // -------------------- INPUT HELPERS --------------------
 
