@@ -67,9 +67,9 @@ public class ConsoleController {
         // 2
         menu.put(2, new MenuItem("Filter active drivers by team", this::option2));
 
-//        // 3
-//        menu.put(3, new MenuItem("Sort tributes: skill desc, name asc", this::option3));
-//
+        // 3
+        menu.put(3, new MenuItem("Sort drivers: skill desc, name asc", this::option3));
+
 //        // 4
 //        menu.put(4, new MenuItem("Write sorted tributes to tributes_sorted.txt", this::option4));
 //
@@ -116,14 +116,14 @@ public class ConsoleController {
                 .forEach(System.out::println);
     }
 
-//    /**
-//     * 3) Sort tributes by skill desc then name asc
-//     */
-//    private void option3() {
-//        StrafeService.sortAbSkillAufName()
-//                .forEach(System.out::println);
-//    }
-//
+    /**
+     * 3) Sort tributes by skill desc then name asc
+     */
+    private void option3() {
+        fahrerService.sortBySkillDescThenNameAsc()
+                .forEach(System.out::println);
+    }
+
 //    /**
 //     * 4) Save sorted tributes to file
 //     */

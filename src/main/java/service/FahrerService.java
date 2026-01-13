@@ -73,4 +73,33 @@ public class FahrerService {
                         fahrer.getSkillLevel()))
                 .toList();
     }
+
+    /**
+     * Sortierung
+     * Sortieren Sie die Liste der Fahrer wie folgt:
+     * ● absteigend nach skillLevel
+     * ● bei gleichem skillLevel aufsteigend nach name
+     * Geben Sie die sortierte Liste auf der Konsole aus.
+     * Ausgabe:
+     * [1] Max Verstappen (Red Bull) - ACTIVE, skill=10
+     * [5] Charles Leclerc (Ferrari) - ACTIVE, skill=9
+     */
+    public List<String> sortBySkillDescThenNameAsc() {
+        List<Fahrer> fahrers = fahrerRepo.findAll();
+        return fahrers.stream()
+                .sorted((f1, f2) -> {
+                    int skillCompare = Integer.compare(f2.getSkillLevel(), f1.getSkillLevel());
+                    if (skillCompare != 0) {
+                        return skillCompare;
+                    }
+                    return f1.getName().compareToIgnoreCase(f2.getName());
+                })
+                .map(fahrer -> String.format("[%d] %s (%s) - %s, skill=%d",
+                        fahrer.getId(),
+                        fahrer.getName(),
+                        fahrer.getTeam(),
+                        fahrer.getStatus(),
+                        fahrer.getSkillLevel()))
+                .toList();
+    }
 }
