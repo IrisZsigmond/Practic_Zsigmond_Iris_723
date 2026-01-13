@@ -6,6 +6,7 @@ import repo.AbstractRepository;
 
 import java.nio.file.Path;
 import java.util.List;
+import java.util.Objects;
 
 
 public class EreignisService {
@@ -55,6 +56,32 @@ public class EreignisService {
                     event.getBasePoints(),
                     computedPoints);
         }).toList();
+    }
+
+    /**
+     * Get by tributId
+     */
+    public List<Ereignis> getEventsByFahrerId(Integer fahrerId) {
+        return eventsRepo.findAll().stream()
+                .filter(event -> Objects.equals(event.getFahrerId(), fahrerId))
+                .toList();
+    }
+
+    /**
+     * For the given events, calculate the total computed points per tributId using the rules from calculateAndPrintEventPoints and getEventsbyTributId.
+     * return an Integer
+     */
+    public Integer getTotalComputedPointsByFahrerId(Integer fahrerId) {
+        List<Ereignis> events = getEventsByFahrerId(fahrerId);
+        return events.stream().mapToInt(event -> {
+            return switch (event.getTyp()) {
+                case OVERTAKE -> event.getBasePoints() + 1;
+                case FASTEST_LAP -> event.getBasePoints() + 2 * (event.getLap() % 3);
+                case TRACK_LIMITS -> event.getBasePoints() - 5;
+                case COLLISION -> event.getBasePoints() - 10 - event.getLap();
+                case PIT_STOP -> event.getLap() <= 10 ? event.getBasePoints() + 2 : event.getBasePoints();
+            };
+        }).sum();
     }
 
     /**

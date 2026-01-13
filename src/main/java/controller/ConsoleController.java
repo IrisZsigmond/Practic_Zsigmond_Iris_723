@@ -76,8 +76,8 @@ public class ConsoleController {
         // 5
         menu.put(5, new MenuItem("Compute points for first 5 events", this::option5));
 
-//        // 6
-//        menu.put(6, new MenuItem("Ranking Top 5 tributes by total score", this::option6));
+        // 6
+        menu.put(6, new MenuItem("Ranking Top 5 drivers by total score", this::option6));
 
         // 7
         menu.put(7, new MenuItem("Generate data/race_report.txt", this::option7));
@@ -143,9 +143,9 @@ public class ConsoleController {
 //    /**
 //     * 6) Ranking Top 5
 //     */
-//    private void option6() {
-//        StrafeService.printTop5TributesRanking();
-//    }
+    private void option6() {
+        fahrerService.printTop5FahrerRanking();
+    }
 //
 //    /**
 //     * 7) Arena report file

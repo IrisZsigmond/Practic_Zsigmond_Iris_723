@@ -6,6 +6,7 @@ import repo.AbstractRepoImpl;
 import repo.AbstractRepository;
 
 import java.nio.file.Path;
+import java.util.Comparator;
 import java.util.List;
 
 public class FahrerService {
@@ -18,6 +19,22 @@ public class FahrerService {
                     new com.fasterxml.jackson.core.type.TypeReference<List<Fahrer>>() {}
             );
 
+    private static class RankingEntry {
+        private final Fahrer fahrer;
+        private final int score;
+
+        public RankingEntry(Fahrer fahrer, int score) {
+            this.fahrer = fahrer;
+            this.score = score;
+        }
+
+        public Fahrer getFahrer() { return fahrer; }
+        public int getScore() { return score; }
+    }
+
+    EreignisService ereignisService = new EreignisService();
+    StrafeService strafeService = new StrafeService();
+    
     /**
      * ● Anzahl der Fahrer
      */
@@ -115,6 +132,55 @@ public class FahrerService {
             java.nio.file.Files.write(filePath, sortedFahrers);
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    /**
+     * Ranking
+     * Berechnen Sie für jeden Fahrer den Gesamtscore:
+     * totalScore(Fahrer) = Summe(computedPoints aus den Events des Fahrers - Summe(seconds aus den Strafen des Fahrers)
+     * Anforderungen:
+     * ● Berechnen Sie totalScore für alle Fahrer.
+     * ● Geben Sie die Top 5 Fahrer aus, sortiert nach
+     * 1. totalScore absteigend
+     * 2. bei Gleichstand name aufsteigend
+     * ● Bestimmen und geben Sie außerdem das Winning Team aus.Das Winning Team ist das Team des Fahrers auf Platz 1 im Ranking.
+     * Ausgabeformat:
+     * Top 5 Drivers:
+     * 1. <Name> (<Team>) -> <totalScore>
+     * ...
+     * Winning team: <Team>
+     */
+    public void printTop5FahrerRanking() {
+        List<Fahrer> fahrers = fahrerRepo.findAll();
+
+        var top5 = fahrers.stream()
+                .map(t -> {
+                    int eventPoints = ereignisService.getTotalComputedPointsByFahrerId(t.getId());
+                    int strafenValue = strafeService.calculateTotalGiftValueByFahrerId(t.getId());
+                    int totalScore = eventPoints - strafenValue;
+                    return new RankingEntry(t, totalScore);
+                })
+                .sorted(Comparator
+                        .comparingInt(RankingEntry::getScore).reversed()
+                        .thenComparing(e -> e.getFahrer().getName())
+                )
+                .limit(5)
+                .toList();
+
+        System.out.println("Top 5 Drivers:");
+
+        for (int i = 0; i < top5.size(); i++) {
+            RankingEntry entry = top5.get(i);
+            System.out.printf("%d. %s (%s) -> %d%n",
+                    i + 1,
+                    entry.getFahrer().getName(),
+                    entry.getFahrer().getTeam(),
+                    entry.getScore());
+        }
+        if (!top5.isEmpty()) {
+            String winningTeam = top5.get(0).getFahrer().getTeam();
+            System.out.printf("Winning team: %s%n", winningTeam);
         }
     }
 }
