@@ -18,5 +18,11 @@ public class EreignisService {
                     new com.fasterxml.jackson.core.type.TypeReference<List<Ereignis>>() {}
             );
 
-
+    /**
+     * ● Anzahl der Ereignisse
+     */
+    public void printEventsCount() {
+        long count = eventsRepo.count();
+        System.out.printf("Events loaded: %d%n", count);
+    }
 }

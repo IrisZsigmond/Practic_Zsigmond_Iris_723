@@ -4,6 +4,6 @@ public enum EreignisTyp {
     OVERTAKE,
     FASTEST_LAP,
     TRACK_LIMITS,
-    COLISION,
+    COLLISION,
     PIT_STOP
 }

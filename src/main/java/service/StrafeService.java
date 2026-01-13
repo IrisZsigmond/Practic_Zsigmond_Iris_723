@@ -16,4 +16,12 @@ public class StrafeService {
                     Strafe::getId,
                     new com.fasterxml.jackson.core.type.TypeReference<List<Strafe>>() {}
             );
+
+    /**
+     * ● Anzahl der Strafen
+     */
+    public void printPenaltiesCount() {
+        long count = strafeRepo.count();
+        System.out.printf("Penalties loaded: %d%n", count);
+    }
 }
