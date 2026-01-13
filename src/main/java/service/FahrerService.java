@@ -102,4 +102,19 @@ public class FahrerService {
                         fahrer.getSkillLevel()))
                 .toList();
     }
+
+    /**
+     * Schreiben Sie die in sortBySkillDescThenNameAsc()
+     * sortierte Liste der Fahrer in die Datei data/drivers_sorted.txt.
+     * Jeder Fahrer soll in einer eigenen Zeile gespeichert werden, im selben Format wie bei der Konsolenausgabe.
+     */
+    public void saveSortedFahrersToFile() {
+        List<String> sortedFahrers = sortBySkillDescThenNameAsc();
+        Path filePath = Path.of("data/drivers_sorted.txt");
+        try {
+            java.nio.file.Files.write(filePath, sortedFahrers);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

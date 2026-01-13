@@ -70,8 +70,8 @@ public class ConsoleController {
         // 3
         menu.put(3, new MenuItem("Sort drivers: skill desc, name asc", this::option3));
 
-//        // 4
-//        menu.put(4, new MenuItem("Write sorted tributes to tributes_sorted.txt", this::option4));
+        // 4
+        menu.put(4, new MenuItem("Write sorted drivers to data/drivers_sorted.txt", this::option4));
 //
 //        // 5
 //        menu.put(5, new MenuItem("Compute points for first 5 events", this::option5));
@@ -124,13 +124,13 @@ public class ConsoleController {
                 .forEach(System.out::println);
     }
 
-//    /**
-//     * 4) Save sorted tributes to file
-//     */
-//    private void option4() {
-//        StrafeService.saveSortedTributesToFile();
-//        System.out.println("Saved to data/tributes_sorted.txt");
-//    }
+    /**
+     * 4) Save sorted tributes to file
+     */
+    private void option4() {
+        fahrerService.saveSortedFahrersToFile();
+        System.out.println("Saved to data/drivers_sorted.txt");
+    }
 //
 //    /**
 //     * 5) Compute points for first 5 events and print each line
