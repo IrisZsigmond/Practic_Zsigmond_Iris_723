@@ -16,4 +16,39 @@ public class Strafe {
         this.seconds = seconds;
         this.lap = lap;
     }
+
+    public Integer getId() {
+        return id;
+    }
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Integer getFahrerId() {
+        return fahrerId;
+    }
+    public void setFahrerId(Integer fahrerId) {
+        this.fahrerId = fahrerId;
+    }
+
+    public StrafeGrund getGrund() {
+        return grund;
+    }
+    public void setGrund(StrafeGrund grund) {
+        this.grund = grund;
+    }
+
+    public Integer getSeconds() {
+        return seconds;
+    }
+    public void setSeconds(Integer seconds) {
+        this.seconds = seconds;
+    }
+
+    public Integer getLap() {
+        return lap;
+    }
+    public void setLap(Integer lap) {
+        this.lap = lap;
+    }
 }
