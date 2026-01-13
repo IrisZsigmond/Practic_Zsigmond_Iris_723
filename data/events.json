@@ -1,0 +1,93 @@
+[
+  {
+    "id": 1,
+    "fahrerId": 1,
+    "typ": "OVERTAKE",
+    "basePoints": 10,
+    "lap": 5
+  },
+  {
+    "id": 2,
+    "fahrerId": 5,
+    "typ": "FASTEST_LAP",
+    "basePoints": 8,
+    "lap": 12
+  },
+  {
+    "id": 3,
+    "fahrerId": 3,
+    "typ": "OVERTAKE",
+    "basePoints": 9,
+    "lap": 14
+  },
+  {
+    "id": 4,
+    "fahrerId": 7,
+    "typ": "PIT_STOP",
+    "basePoints": 4,
+    "lap": 9
+  },
+  {
+    "id": 5,
+    "fahrerId": 2,
+    "typ": "TRACK_LIMITS",
+    "basePoints": -2,
+    "lap": 7
+  },
+  {
+    "id": 6,
+    "fahrerId": 9,
+    "typ": "FASTEST_LAP",
+    "basePoints": 7,
+    "lap": 8
+  },
+  {
+    "id": 7,
+    "fahrerId": 6,
+    "typ": "OVERTAKE",
+    "basePoints": 8,
+    "lap": 20
+  },
+  {
+    "id": 8,
+    "fahrerId": 4,
+    "typ": "COLLISION",
+    "basePoints": 5,
+    "lap": 18
+  },
+  {
+    "id": 9,
+    "fahrerId": 8,
+    "typ": "PIT_STOP",
+    "basePoints": 4,
+    "lap": 16
+  },
+  {
+    "id": 10,
+    "fahrerId": 11,
+    "typ": "OVERTAKE",
+    "basePoints": 6,
+    "lap": 10
+  },
+  {
+    "id": 11,
+    "fahrerId": 13,
+    "typ": "TRACK_LIMITS",
+    "basePoints": 0,
+    "lap": 3
+  },
+  {
+    "id": 12,
+    "fahrerId": 14,
+    "typ": "FASTEST_LAP",
+    "basePoints": 8,
+    "lap": 7
+  },
+  {
+    "id": 13,
+    "fahrerId": 15,
+    "typ": "PIT_STOP",
+    "basePoints": 3,
+    "lap": 6
+  }
+]

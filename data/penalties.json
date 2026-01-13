@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "fahrerId": 2,
+    "grund": "TRACK_LIMITS",
+    "seconds": 5,
+    "lap": 7
+  },
+  {
+    "id": 2,
+    "fahrerId": 4,
+    "grund": "COLLISION",
+    "seconds": 10,
+    "lap": 18
+  },
+  {
+    "id": 3,
+    "fahrerId": 5,
+    "grund": "SPEEDING_PITLANE",
+    "seconds": 5,
+    "lap": 12
+  },
+  {
+    "id": 4,
+    "fahrerId": 7,
+    "grund": "UNSAFE_RELEASE",
+    "seconds": 5,
+    "lap": 9
+  },
+  {
+    "id": 5,
+    "fahrerId": 1,
+    "grund": "TRACK_LIMITS",
+    "seconds": 5,
+    "lap": 5
+  },
+  {
+    "id": 6,
+    "fahrerId": 9,
+    "grund": "COLLISION",
+    "seconds": 5,
+    "lap": 8
+  },
+  {
+    "id": 7,
+    "fahrerId": 11,
+    "grund": "TRACK_LIMITS",
+    "seconds": 5,
+    "lap": 10
+  },
+  {
+    "id": 8,
+    "fahrerId": 14,
+    "grund": "SPEEDING_PITLANE",
+    "seconds": 5,
+    "lap": 7
+  },
+  {
+    "id": 9,
+    "fahrerId": 3,
+    "grund": "UNSAFE_RELEASE",
+    "seconds": 5,
+    "lap": 14
+  }
+]

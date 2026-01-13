@@ -1,0 +1,107 @@
+[
+  {
+    "id": 5,
+    "name": "Charles Leclerc",
+    "team": "Ferrari",
+    "status": "ACTIVE",
+    "skillLevel": 9
+  },
+  {
+    "id": 12,
+    "name": "Esteban Ocon",
+    "team": "Alpine",
+    "status": "DNF",
+    "skillLevel": 7
+  },
+  {
+    "id": 15,
+    "name": "Valtteri Bottas",
+    "team": "Sauber",
+    "status": "ACTIVE",
+    "skillLevel": 6
+  },
+  {
+    "id": 11,
+    "name": "Pierre Gasly",
+    "team": "Alpine",
+    "status": "ACTIVE",
+    "skillLevel": 7
+  },
+  {
+    "id": 7,
+    "name": "Lando Norris",
+    "team": "McLaren",
+    "status": "ACTIVE",
+    "skillLevel": 8
+  },
+  {
+    "id": 14,
+    "name": "Alex Albon",
+    "team": "Williams",
+    "status": "ACTIVE",
+    "skillLevel": 7
+  },
+  {
+    "id": 8,
+    "name": "Oscar Piastri",
+    "team": "McLaren",
+    "status": "ACTIVE",
+    "skillLevel": 7
+  },
+  {
+    "id": 6,
+    "name": "Carlos Sainz",
+    "team": "Ferrari",
+    "status": "ACTIVE",
+    "skillLevel": 8
+  },
+  {
+    "id": 13,
+    "name": "Yuki Tsunoda",
+    "team": "RB",
+    "status": "ACTIVE",
+    "skillLevel": 7
+  },
+  {
+    "id": 9,
+    "name": "Fernando Alonso",
+    "team": "Aston Martin",
+    "status": "ACTIVE",
+    "skillLevel": 8
+  },
+  {
+    "id": 10,
+    "name": "Lance Stroll",
+    "team": "Aston Martin",
+    "status": "DNF",
+    "skillLevel": 6
+  },
+  {
+    "id": 1,
+    "name": "Max Verstappen",
+    "team": "Red Bull",
+    "status": "ACTIVE",
+    "skillLevel": 10
+  },
+  {
+    "id": 2,
+    "name": "Sergio Perez",
+    "team": "Red Bull",
+    "status": "ACTIVE",
+    "skillLevel": 8
+  },
+  {
+    "id": 3,
+    "name": "Lewis Hamilton",
+    "team": "Mercedes",
+    "status": "ACTIVE",
+    "skillLevel": 9
+  },
+  {
+    "id": 4,
+    "name": "George Russell",
+    "team": "Mercedes",
+    "status": "ACTIVE",
+    "skillLevel": 8
+  }
+]
